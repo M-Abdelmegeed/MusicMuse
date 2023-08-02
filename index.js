@@ -7,6 +7,7 @@ const session = require("express-session");
 const googleLogin = require("./src/controllers/Authentication/googleLogin");
 const generateToken = require("./src/controllers/Authentication/generateToken");
 
+console.log(process.env.AWS_ACCESS_KEY_ID);
 const app = express();
 app.use(
   session({

@@ -3,7 +3,7 @@ const registerUser = require("../controllers/Authentication/register");
 const authenticateToken = require("../controllers/Authentication/authenticateToken");
 const userLogin = require("../controllers/Authentication/login");
 const googleLogin = require("../controllers/Authentication/googleLogin");
-const googleSuccess = require("../controllers/Authentication/googleSuccess");
+const authorize = require("../controllers/Authentication/authorize");
 
 const router = express.Router();
 router.post("/registerUser", registerUser);
@@ -13,7 +13,6 @@ router.post("/googleLogin", (req, res) => {
   googleLogin(); // Call the function to set up the GoogleStrategy.
   res.send("Google login initialized!");
 });
-router.get("/success", googleSuccess);
 router.get("/error", (req, res) => {
   res.send("Login Failed!");
 });

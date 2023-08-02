@@ -6,6 +6,8 @@ const songSchema = new mongoose.Schema({
   artist: { type: String, required: true },
   genre: { type: String },
   likedBy: [{ type: mongoose.Types.ObjectId, ref: "user" }],
+  objectName: { type: String },
+  image: { type: String },
 });
 
 module.exports = mongoose.model("Song", songSchema);
