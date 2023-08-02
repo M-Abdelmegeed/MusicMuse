@@ -5,11 +5,15 @@ const userLogin = require("../controllers/Authentication/login");
 const googleLogin = require("../controllers/Authentication/googleLogin");
 const authorize = require("../controllers/Authentication/authorize");
 const addSong = require("../controllers/Songs/addSong");
+const deleteSong = require("../controllers/Songs/deleteSong");
+const getSongs = require("../controllers/Songs/getSongs");
 
 const router = express.Router();
 router.post("/registerUser", registerUser);
 router.post("/login", userLogin);
 router.post("/addSong", authenticateToken, authorize, addSong);
+router.post("/getSongs", authenticateToken, getSongs);
+router.post("/deleteSong", authenticateToken, authorize, deleteSong);
 router.post("/googleLogin", (req, res) => {
   console.log("Received a POST request to /googleLogin");
   googleLogin(); // Call the function to set up the GoogleStrategy.
