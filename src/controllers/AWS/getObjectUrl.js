@@ -19,13 +19,3 @@ const getObjectUrl = async (bucketName, objectKey) => {
 };
 
 module.exports = getObjectUrl;
-
-//Test example:
-// const bucketName = "mymusic10";
-// const objectKey = "Post Malone - Die For Me (Audio) ft. Future, Halsey.mp3";
-
-// console.log(process.env.AWS_ACCESS_KEY_ID);
-// (async () => {
-//   const objectUrl = await getObjectUrl(bucketName, objectKey);
-//   console.log("Object URL:", objectUrl);
-// })();

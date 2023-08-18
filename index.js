@@ -1,13 +1,16 @@
 const express = require("express"); // express server
 require("dotenv").config(); // use the env variables
+const cors = require("cors");
 const mongoose = require("mongoose");
 const router = require("./src/routes/index.routes"); // used to handle routes
 const passport = require("passport");
 const session = require("express-session");
 const googleLogin = require("./src/controllers/Authentication/googleLogin");
 const generateToken = require("./src/controllers/Authentication/generateToken");
+const Genre = require("./src/models/Genre");
 
 const app = express();
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(
   session({
     resave: false,
